@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DaRoca")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94121f4091af082b02284c6d7b472c83aabbbdc4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b04987da2433d16a3a648b9472f34fbd465b4591")]
 [assembly: System.Reflection.AssemblyProductAttribute("DaRoca")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DaRoca")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
