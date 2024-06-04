@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authentication.OAuth.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-[Route("/[contoller]")]
+[Route("/[controller]")]
 [ApiController]
 public class ProductsController : ControllerBase {
 
