@@ -10,6 +10,9 @@ public partial class DatabaseContext : DbContext {
     public virtual DbSet<Customer> Customer { get; set; }
     public virtual DbSet<Product> Product { get; set; }
     public virtual DbSet<ProductCategory> ProductCategory { get; set; }
+    public virtual DbSet<SalesOrder> SalesOrders{ get; set; }
+    public virtual DbSet<SalesOrderItem> SalesOrderItems{ get; set; }
+   
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
 
@@ -28,6 +31,19 @@ public partial class DatabaseContext : DbContext {
         modelBuilder.Entity<Product>().Property(p => p.ProductCategoryId).IsRequired();
         modelBuilder.Entity<Product>().Property(p => p.Name).HasMaxLength(50).IsRequired();
         modelBuilder.Entity<Product>().Property(p => p.UnitPrice).HasPrecision(11,5).IsRequired();
+        modelBuilder.Entity<Product>().HasMany<SalesOrderItem>().WithOne().HasForeignKey(fk => fk.ProductId);
+
+        modelBuilder.Entity<SalesOrder>().HasKey(e => e.OrderId); 
+        modelBuilder.Entity<SalesOrder>().Property(p => p.OrderDate).IsRequired();
+        modelBuilder.Entity<SalesOrder>().Property(p => p.EstimateDeliveryDate).IsRequired();
+        modelBuilder.Entity<SalesOrder>().Property(p => p.Status).HasMaxLength(20).IsRequired();
+        modelBuilder.Entity<SalesOrder>().HasMany<Customer>().WithOne().HasForeignKey(fk => fk.CustomerId);
+        modelBuilder.Entity<SalesOrder>().HasMany<SalesOrderItem>().WithOne().HasForeignKey(fk => fk.OrderId);
+
+        modelBuilder.Entity<SalesOrderItem>().HasKey(e => new{e.OrderId, e.ProductId});
+        modelBuilder.Entity<SalesOrderItem>().Property(p => p.Quantity).IsRequired();
+        modelBuilder.Entity<SalesOrderItem>().Property(p => p.UnitPrice).HasPrecision(11,5).IsRequired();
+        
 
 
         // modelBuilder.Entity<Customer>(entity => {entity.HasKey(k => k.Id);});

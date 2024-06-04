@@ -16,5 +16,6 @@ public class ProductsController : ControllerBase {
     public ActionResult<IEnumerable<Product>> GetProducts() {
         return this.context.Product.ToList();
     }
+    
 
 }

@@ -40,7 +40,7 @@ public class CustomerController : ControllerBase {
        }
        this.context.Customer.Add(customer);
        this.context.SaveChanges();
-       return CreatedAtAction(nameof(GetCustomer), new {id = customer.Id}, customer);
+       return CreatedAtAction(nameof(GetCustomer), new {id = customer.CustomerId}, customer);
    }
 
   [HttpDelete("{id}")]
