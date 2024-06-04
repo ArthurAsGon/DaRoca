@@ -20,8 +20,16 @@ public partial class DatabaseContext : DbContext {
         modelBuilder.Entity<Customer>().Property(p => p.Latitude).HasPrecision(11, 3).IsRequired();
         modelBuilder.Entity<Customer>().Property(p => p.Longitude).HasPrecision(11, 3).IsRequired();
 
+        modelBuilder.Entity<ProductCategory>().HasKey(e => e.ProductCategoryId);
+        modelBuilder.Entity<ProductCategory>().Property(p => p.Name).HasMaxLength(50).IsRequired();
+        modelBuilder.Entity<ProductCategory>().HasMany<Product>().WithOne().HasForeignKey(fk => fk.ProductCategoryId);
+
+        modelBuilder.Entity<Product>().HasKey(e => e.ProductId);
+        modelBuilder.Entity<Product>().Property(p => p.ProductCategoryId).IsRequired();
         modelBuilder.Entity<Product>().Property(p => p.Name).HasMaxLength(50).IsRequired();
-        modelBuilder.Entity<Product>().Property(p => p.UnitPrice).HasPrecision(11, 5).IsRequired();
+        modelBuilder.Entity<Product>().Property(p => p.UnitPrice).HasPrecision(11,5).IsRequired();
+
+
         // modelBuilder.Entity<Customer>(entity => {entity.HasKey(k => k.Id);});
         OnModelCreating(modelBuilder);
     }
