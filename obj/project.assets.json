@@ -4521,9 +4521,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/u22300/Documents/Mult plataforma/DaRoca/DaRoca/DaRoca.csproj",
-      "projectName": "DaRoca",
-      "projectPath": "/Users/u22300/Documents/Mult plataforma/DaRoca/DaRoca/DaRoca.csproj",
+      "projectUniqueName": "/Users/u22300/Documents/Mult plataforma/DaRoca/DaRoca/backend.csproj",
+      "projectName": "backend",
+      "projectPath": "/Users/u22300/Documents/Mult plataforma/DaRoca/DaRoca/backend.csproj",
       "packagesPath": "/Users/u22300/.nuget/packages/",
       "outputPath": "/Users/u22300/Documents/Mult plataforma/DaRoca/DaRoca/obj/",
       "projectStyle": "PackageReference",
