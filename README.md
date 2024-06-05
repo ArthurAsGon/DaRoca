@@ -8,6 +8,8 @@ dotnet ef migrations add InitialCreate
 
 depois 
 dotnet ef database update
+
+dotnet ef drop
 <!--  trocar para false -- <InvariantGlobalization>false</InvariantGlobalization> -->
 
 alterar id arquivo customer para customerId

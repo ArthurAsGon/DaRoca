@@ -5,8 +5,4 @@ public class SalesOrderItem
     public int Quantity { get; set; }
     public required decimal UnitPrice { get; set; }
 
-    
-
-
-
 }
